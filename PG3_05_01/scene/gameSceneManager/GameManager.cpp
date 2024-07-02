@@ -53,7 +53,6 @@ void GameManager::Initialize(){
 	Novice::Initialize(kWindowTitle, (int)IScene::kWindowWidth, (int)IScene::kWindowHeight);
 
 	sceneArr_[Title] = std::make_unique<TitleScene>();//タイトル
-	sceneArr_[Title]->Initialize();
 	sceneArr_[Game_Stage] = std::make_unique<StageScene>();//ステージ
 	sceneArr_[End] = std::make_unique<EndScene>();//エンド
 	currentSceneNo_ = static_cast<int>(Title);

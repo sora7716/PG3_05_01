@@ -37,7 +37,7 @@ private://メンバ関数
 
 public://静的メンバ変数
 	static inline const char kWindowTitle[] = "GC2B_01_イイヅカ_ソラ";
-	static inline const int kSceneNum = 3;
+	static inline const int kSceneNum = SCENE::SceneNum;
 private://メンバ変数
 	//キーを受け取る箱
 	char keys_[IScene::kKeysNums];//現在のキー

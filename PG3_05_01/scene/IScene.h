@@ -7,6 +7,7 @@ enum SCENE {
 	Title,
 	Game_Stage,
 	End,
+	SceneNum
 };
 
 class IScene {

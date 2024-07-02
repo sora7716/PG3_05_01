@@ -11,7 +11,7 @@ void EndScene::Initialize() {
 void EndScene::Update(char* keys, char* preKeys) {
 	gameObject_.position += gameObject_.velocity;
 	if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
-		sceneNo_ = static_cast<int>(Title);
+		sceneNo_ = Title;
 	}
 }
 
