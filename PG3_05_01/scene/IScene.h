@@ -2,6 +2,7 @@
 #include <cmath>
 #define _USE_MATH_DEFINES
 #include <Novice.h>
+#include "scene/math/Math.h"
 //シーン
 enum SCENE {
 	Title,
@@ -51,6 +52,3 @@ protected:
 	static int sceneNo_;//シーンナンバーの管理をする
 	GameObject gameObject_ = {};//各シーンに出すオブジェクトに使う素材を管理
 };
-
-//加法
-const IScene::Vector2 operator+=(const IScene::Vector2& v1, const IScene::Vector2& v2);

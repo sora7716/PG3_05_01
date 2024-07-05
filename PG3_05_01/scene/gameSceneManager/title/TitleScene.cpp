@@ -1,5 +1,4 @@
 ﻿#include "TitleScene.h"
-
 //初期化
 void TitleScene::Initialize(){
 	sceneNo_ = static_cast<int>(SCENE::Title);
@@ -11,7 +10,6 @@ void TitleScene::Initialize(){
 
 //更新
 void TitleScene::Update(char* keys, char* preKeys){
-	gameObject_.position += gameObject_.velocity;
 	if (keys[DIK_SPACE] && !preKeys[DIK_SPACE]) {
 		sceneNo_ = Game_Stage;
 	}

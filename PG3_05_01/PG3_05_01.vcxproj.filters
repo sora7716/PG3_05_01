@@ -23,6 +23,18 @@
     <Filter Include="scene\ヘッダーファイル">
       <UniqueIdentifier>{19f68c9d-ff8e-422a-8074-27a1be0133a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scene\cppファイル\gameObject">
+      <UniqueIdentifier>{2326ca5d-e8c1-4b06-93fa-8f652c21f863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\ヘッダーファイル\gameObject">
+      <UniqueIdentifier>{b3fb6471-b53e-4e87-bb3a-040cb13d6ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\cppファイル\sceneObject">
+      <UniqueIdentifier>{eaa088c2-bfd7-4d6e-8a8c-cc326734f55e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="scene\ヘッダーファイル\sceneObject">
+      <UniqueIdentifier>{1784f917-7ab9-4699-b0aa-fe48fc68c3a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -47,20 +59,32 @@
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\StringUtility.cpp">
       <Filter>KamataEngine\Source</Filter>
     </ClCompile>
-    <ClCompile Include="scene\gameSceneManager\end\EndScene.cpp">
-      <Filter>scene\cppファイル</Filter>
+    <ClCompile Include="scene\gameObject\player\Player.cpp">
+      <Filter>scene\cppファイル\gameObject</Filter>
     </ClCompile>
-    <ClCompile Include="scene\gameSceneManager\game\StageScene.cpp">
-      <Filter>scene\cppファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="scene\gameSceneManager\title\TitleScene.cpp">
+    <ClCompile Include="scene\gameSceneManager\GameManager.cpp">
       <Filter>scene\cppファイル</Filter>
     </ClCompile>
     <ClCompile Include="scene\IScene.cpp">
-      <Filter>scene</Filter>
+      <Filter>scene\cppファイル</Filter>
     </ClCompile>
-    <ClCompile Include="scene\gameSceneManager\GameManager.cpp">
-      <Filter>scene</Filter>
+    <ClCompile Include="scene\gameObject\command\inputHandle\InputHandler.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\gameObject\command\Command.cpp">
+      <Filter>scene\cppファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\gameSceneManager\end\EndScene.cpp">
+      <Filter>scene\cppファイル\sceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\gameSceneManager\game\StageScene.cpp">
+      <Filter>scene\cppファイル\sceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\gameSceneManager\title\TitleScene.cpp">
+      <Filter>scene\cppファイル\sceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\math\Math.cpp">
+      <Filter>KamataEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,17 +164,23 @@
     <ClInclude Include="scene\gameSceneManager\end\EndScene.h">
       <Filter>scene\ヘッダーファイル</Filter>
     </ClInclude>
-    <ClInclude Include="scene\gameSceneManager\game\StageScene.h">
-      <Filter>scene\ヘッダーファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="scene\gameSceneManager\title\TitleScene.h">
-      <Filter>scene\ヘッダーファイル</Filter>
-    </ClInclude>
     <ClInclude Include="scene\IScene.h">
-      <Filter>scene</Filter>
+      <Filter>scene\ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\gameObject\player\Player.h">
+      <Filter>scene\ヘッダーファイル\gameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\gameObject\command\Command.h" />
+    <ClInclude Include="scene\gameObject\command\inputHandle\InputHandler.h" />
+    <ClInclude Include="scene\gameSceneManager\title\TitleScene.h">
+      <Filter>scene\ヘッダーファイル\sceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\gameSceneManager\game\StageScene.h">
+      <Filter>scene\ヘッダーファイル\sceneObject</Filter>
     </ClInclude>
     <ClInclude Include="scene\gameSceneManager\GameManager.h">
-      <Filter>scene</Filter>
+      <Filter>scene\ヘッダーファイル\sceneObject</Filter>
     </ClInclude>
+    <ClInclude Include="scene\math\Math.h" />
   </ItemGroup>
 </Project>
