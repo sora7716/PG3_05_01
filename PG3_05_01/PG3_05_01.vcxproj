@@ -118,6 +118,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="main.cpp" />
     <ClCompile Include="scene\gameObject\command\Command.cpp" />
     <ClCompile Include="scene\gameObject\command\inputHandle\InputHandler.cpp" />
+    <ClCompile Include="scene\gameObject\map\InputMap.cpp" />
     <ClCompile Include="scene\gameObject\player\Player.cpp" />
     <ClCompile Include="scene\gameSceneManager\end\EndScene.cpp" />
     <ClCompile Include="scene\gameSceneManager\GameManager.cpp" />
@@ -156,6 +157,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="C:\KamataEngine\Adapter\Novice.h" />
     <ClInclude Include="scene\gameObject\command\Command.h" />
     <ClInclude Include="scene\gameObject\command\inputHandle\InputHandler.h" />
+    <ClInclude Include="scene\gameObject\map\InputMap.h" />
     <ClInclude Include="scene\gameObject\player\Player.h" />
     <ClInclude Include="scene\gameSceneManager\end\EndScene.h" />
     <ClInclude Include="scene\gameSceneManager\GameManager.h" />

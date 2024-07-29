@@ -2,6 +2,7 @@
 #include "scene/IScene.h"
 #include "scene/gameObject/player/Player.h"
 #include "scene/gameObject/command/inputHandle/InputHandler.h"
+#include "scene/gameObject/map/InputMap.h"
 class StageScene :public IScene {
 
 public://メンバ関数
@@ -35,5 +36,6 @@ private://メンバ変数
 	InputHandler* inputHandler_;
 	ICommand* iCommand_;
 	Player* player_;
+	InputMap* inputMap_;
 };
 

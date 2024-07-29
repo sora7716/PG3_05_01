@@ -1,7 +1,7 @@
 ﻿#include "GameManager.h"
 
 //コンストラクタ
-GameManager::GameManager(){
+GameManager::GameManager() {
 	for (int i = 0; i < IScene::kKeysNums; i++) {
 		keys_[i] = 0;
 		preKeys_[i] = 0;
@@ -14,11 +14,11 @@ GameManager::GameManager(){
 }
 
 //デストラクタ
-GameManager::~GameManager(){
+GameManager::~GameManager() {
 }
 
 //ゲームループ
-void GameManager::Run(){
+void GameManager::Run() {
 	Initialize();//初期化
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
@@ -48,18 +48,18 @@ void GameManager::Run(){
 }
 
 //初期化
-void GameManager::Initialize(){
+void GameManager::Initialize() {
 	// ライブラリの初期化
 	Novice::Initialize(kWindowTitle, (int)IScene::kWindowWidth, (int)IScene::kWindowHeight);
 
 	sceneArr_[Title] = std::make_unique<TitleScene>();//タイトル
 	sceneArr_[Game_Stage] = std::make_unique<StageScene>();//ステージ
 	sceneArr_[End] = std::make_unique<EndScene>();//エンド
-	currentSceneNo_ = static_cast<int>(Title);
+	currentSceneNo_ = Title;
 }
 
 //更新
-void GameManager::InputKeys(){
+void GameManager::InputKeys() {
 	// キー入力を受け取る
 	memcpy(preKeys_, keys_, 256);
 	Novice::GetHitKeyStateAll(keys_);

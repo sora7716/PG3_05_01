@@ -1,15 +1,17 @@
 ﻿#include "StageScene.h"
 
-StageScene::StageScene(){
+StageScene::StageScene() {
 	inputHandler_ = nullptr;
 	iCommand_ = nullptr;
 	player_ = nullptr;
+	inputMap_ = nullptr;
 }
 
-StageScene::~StageScene(){
+StageScene::~StageScene() {
 	delete inputHandler_;
 	delete iCommand_;
 	delete player_;
+	delete inputMap_;
 }
 
 //初期化
@@ -27,6 +29,9 @@ void StageScene::Initialize() {
 	//New Player
 	player_ = new Player();
 	player_->Initialize();
+
+	inputMap_ = new InputMap();
+	inputMap_->ReadCSV("resources/map/map.csv");
 }
 
 //更新
@@ -46,11 +51,33 @@ void StageScene::Update(char* keys, char* preKeys) {
 		player_->SetSpeed({});
 	}
 	player_->Update();
+
+	// バックグラウンドの処理
+	thread backgroundUpdate(&InputMap::BackgroundUpdate, inputMap_);
+
+	// メインスレッドの処理
+
+	lock_guard<mutex> lock(inputMap_->exclusive_);
+	inputMap_->q_.push(2);
+	inputMap_->condition_.notify_one();
+
+	sleep_for(milliseconds(500));
+
+	// 終了処理
+
+	inputMap_->exit_ = true;
+	inputMap_->condition_.notify_all();
+
+	backgroundUpdate.join();
+
+	delete inputMap_;
 }
+
 
 //描画
 void StageScene::Draw() {
 	Novice::ScreenPrintf((int)gameObject_.position.x, (int)gameObject_.position.y, "StageScene");
 	Novice::ScreenPrintf((int)gameObject_.position.x, (int)gameObject_.position.y + 20, "PushSpace");
+	inputMap_->Draw();
 	player_->Draw();
 }
